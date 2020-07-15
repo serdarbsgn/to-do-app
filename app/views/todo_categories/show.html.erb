@@ -1,9 +1,10 @@
-<p id="notice"><%= notice %></p>
+
 
  <% todos= Todo.find(@todo_category.todo_id)%>
  <% categories= Category.find(@todo_category.category_id)%>
-        <h2><%= categories.title %></h2>
-        <p><%= todos.title %></p>
+        <h2><%= "Category : " +categories.title %></h2>
+        <p><%= "To-do Title : " + todos.title %></p>
+        <p><%= "To-do Description : " + todos.description%></p>
         <p><%= if todos.is_general
         	"general " + todos.date.to_s
         	else
