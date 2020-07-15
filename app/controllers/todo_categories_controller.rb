@@ -25,10 +25,6 @@ class TodoCategoriesController < ApplicationController
   # POST /todo_categories.json
   def create
     @todo_category = TodoCategory.new(todo_category_params)
-    @todos = Todo.find(5)
-    @categories = Category.find(3)
-    @todo_category.todo_id = @todos.id
-    @todo_category.category_id = @categories.id
     respond_to do |format|
       if @todo_category.save
         format.html { redirect_to @todo_category, notice: 'Todo category was successfully created.' }
