@@ -1,14 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @todo_category.category_id %>
-</p>
-
-<p>
-  <strong>Todo:</strong>
-  <%= @todo_category.todo_id %>
-</p>
+ <% todos= Todo.find(@todo_category.todo_id)%>
+ <% categories= Category.find(@todo_category.category_id)%>
+        <h2><%= categories.title %></h2>
+        <p><%= todos.title %></p>
+        <p><%= if todos.is_general
+        	"general " + todos.date.to_s
+        	else
+        	"today " + todos.date.to_s
+        	end
+         %></p>
+        
 
 <%= link_to 'Edit', edit_todo_category_path(@todo_category) %> |
 <%= link_to 'Back', todo_categories_path %>

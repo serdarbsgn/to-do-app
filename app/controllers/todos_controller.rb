@@ -4,14 +4,15 @@ class TodosController < ApplicationController
   # GET /todos
   # GET /todos.json
   def index
-    @todos = Todo.all
+    require 'date'    
+    @todos = Todo.where( "is_general = 1 OR date = ?" , Date.today.to_s )
   end
 
   # GET /todos/1
   # GET /todos/1.json
   def show
   end
-
+  
   # GET /todos/new
   def new
     @todo = Todo.new

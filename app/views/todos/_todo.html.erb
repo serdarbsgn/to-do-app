@@ -1,0 +1,25 @@
+<p>
+  <strong>Title:</strong>
+  <%= @todo.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @todo.description %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @todo.date %>
+</p>
+
+<p>
+  <strong>Lifespan:</strong>
+  <%= 
+   if @todo.is_general
+   "General"
+   else
+   "Daily"
+   end
+   %>
+</p>

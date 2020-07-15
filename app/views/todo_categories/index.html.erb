@@ -13,9 +13,11 @@
 
   <tbody>
     <% @todo_categories.each do |todo_category| %>
+    <% todos= Todo.find(todo_category.todo_id)%>
+    <% categories= Category.find(todo_category.category_id)%>
       <tr>
-        <td><%= todo_category.category_id %></td>
-        <td><%= todo_category.todo_id %></td>
+        <td><%= categories.title %></td>
+        <td><%= todos.title %></td>
         <td><%= link_to 'Show', todo_category %></td>
         <td><%= link_to 'Edit', edit_todo_category_path(todo_category) %></td>
         <td><%= link_to 'Destroy', todo_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>

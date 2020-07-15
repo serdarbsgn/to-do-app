@@ -1,24 +1,6 @@
 <p id="notice"><%= notice %></p>
+<%= render @todo %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @todo.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @todo.description %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @todo.date %>
-</p>
-
-<p>
-  <strong>Is general:</strong>
-  <%= @todo.is_general %>
-</p>
 
 <h2>Comments</h2>
 <%= render @todo.comments %>
